@@ -1,9 +1,6 @@
-# OBSCURATRACE
-Below is a comprehensive README.md for the ObscuraTrace tool. It is written in a professional style and ready to place in the root of your repository alongside the main code script (e.g., privacyvision_ultimate.py).
-
 ObscuraTrace
 
-ObscuraTrace is an AI-driven privacy protection tool that scans adult content platforms to detect unauthorized appearances of your face or identity. Acting as your personal digital investigator, it automates hourly searches across multiple adult sites to swiftly identify new uploads. Featuring advanced facial recognition, metadata analysis, and high-performance frame processing, ObscuraTrace notifies you whenever it detects a match—helping you address potential privacy concerns promptly.
+ObscuraTrace is a privacy protection tool that scans adult content platforms to detect unauthorized appearances of your face or identity. Acting as your personal digital investigator, it automates hourly searches across multiple adult sites to swiftly identify new uploads. Featuring advanced facial recognition, metadata analysis, and high-performance frame processing, ObscuraTrace notifies you whenever it detects a match—helping you address potential privacy concerns promptly.
 
 Key Features
 	1.	AI-Powered Facial Recognition
