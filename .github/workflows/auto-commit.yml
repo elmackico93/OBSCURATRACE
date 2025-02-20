@@ -1,0 +1,27 @@
+name: Auto Commit Files
+
+on:
+  workflow_dispatch:  # Permette di avviarlo manualmente
+  push:               # Si attiva quando ci sono cambiamenti
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}  # Usa la chiave SSH
+
+      - name: Configura Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@users.noreply.github.com"
+
+      - name: Aggiungi e committa modifiche
+        run: |
+          git add .
+          git commit -m "Commit automatico da GitHub Actions" || echo "Nessuna modifica da committare"
+
+      - name: Pusha le modifiche
+        run: git push
