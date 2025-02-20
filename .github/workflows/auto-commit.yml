@@ -1,8 +1,7 @@
-name: Auto Commit Files
+name: Dynamic Auto Commit
 
 on:
   workflow_dispatch:  # Permette di avviarlo manualmente
-  push:               # Si attiva quando ci sono cambiamenti
 
 jobs:
   auto-commit:
@@ -11,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}  # Usa la chiave SSH
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}  # Usa la chiave SSH per clonare la repo
 
       - name: Configura Git
         run: |
@@ -21,7 +20,7 @@ jobs:
       - name: Aggiungi e committa modifiche
         run: |
           git add .
-          git commit -m "Commit automatico da GitHub Actions" || echo "Nessuna modifica da committare"
+          git commit -m "Commit manuale approvato" || echo "Nessuna modifica da committare"
 
       - name: Pusha le modifiche
         run: git push
